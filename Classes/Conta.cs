@@ -25,24 +25,20 @@ namespace DIO.Bank
 			this.Senha = senha;
 		}
 
-		public bool ValidaSenhas(string senha)
-		{
-			return this.Senha.Equals(senha);
-		}
-
-		public bool Sacar(double valorSaque)
+		public bool ValidarSenha(string senha) 
+        {
+            return this.Senha.Equals(senha);
+        }	
+		public void Sacar(double valorSaque)
 		{
             // Validação de saldo suficiente
             if (this.Saldo - valorSaque < (this.Credito *-1)){
                 Console.WriteLine("Saldo insuficiente!");
-                return false;
             }
             this.Saldo -= valorSaque;
 
             Console.WriteLine("Saldo atual da conta de {0} é {1}", this.Nome, this.Saldo);
             // https://docs.microsoft.com/pt-br/dotnet/standard/base-types/composite-formatting
-
-            return true;
 		}
 
 		public void Depositar(double valorDeposito)

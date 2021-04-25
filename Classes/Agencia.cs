@@ -19,9 +19,9 @@ namespace DIO.Bank
 
         public bool ValidarSenha(int indiceConta, string senha) 
         {
-            return listContas[indiceConta].ValidaSenhas(senha);
+            return listContas[indiceConta].ValidarSenha(senha);
         }
-
+        
         public void Depositar(int indiceConta, double valorDeposito)
 		{
 			listContas[indiceConta].Depositar(valorDeposito);
